@@ -1,0 +1,54 @@
+{
+  "name": "react-calculator",
+  "version": "1.0.0",
+  "description": "A calculator chrome extension built with ReactJS",
+  "author": "laguirre",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/js",
+    "clean": "rm -rdf node_modules/ coverage/ npm-debug.log build/bundle.js",
+    "build": "webpack -d",
+    "client": "npm run build && webpack-dev-server --content-base src/ --inline --hot --port 8080",
+    "test": "jest ./test/*.test.js --coverage"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1",
+    "jest": "^23.1.0",
+    "react-test-renderer": "^16.4.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ]
+  },
+  "keywords": [
+    "calculator",
+    "react",
+    "chrome",
+    "extension"
+  ]
+}
