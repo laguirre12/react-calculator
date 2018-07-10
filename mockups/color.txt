@@ -1,0 +1,24 @@
+Individual bright colors:
+ - #FF0000 (bright red)
+ - #00F4F4 (bright blue)
+ - #A9FD00 (bright green)
+ - #2A526D (dull blue)
+
+
+//////////////////////////////////////////////
+#0B0A0D
+#373638
+#F6EBFF
+#00C89E
+//////////////////////////////////////////////
+1D1C21 - dark purple
+65746F - blueish gray
+36AEA7 - bright baby blue
+D9CDAF - light yellow/gray
+E34743 - bright red
+
+424B54 - outer space
+1B2021 - dark jungle green
+85C7F2 - baby blue
+F06449 - tomato
+4C4C4C - dark liver

@@ -1,27 +1,31 @@
 {
   "manifest_version": 2,
-  "name": "react-calculator",
-  "version": "1.0",
+  "name": "React Calculator",
+  "version": "0.0.0",
   "author": "laguirre",
 
   "description": "A calculator chrome extension built with ReactJS",
-
-  "options_ui": {
-    "page": "html/options.html",
-    "chrome_style": true,
-    "open_in_tab": false
-  },
-
   "icons": {
     "16"  : "images/icon-16.png",
+    "32"  : "images/icon-32.png",
     "48"  : "images/icon-48.png",
     "128" : "images/icon-128.png"
   },
 
   "browser_action": {
-    "default_title" : "React-Calculator",
-    "default_icon"  : "images/icon-16.png",
-    "default_popup" : "html/popup.html"
+    "default_title" : "React Calculator",
+    "default_popup" : "html/popup.html",
+    "default_icon"  : {
+      "16": "images/icon-16.png",
+      "24": "images/icon-24.png",
+      "32": "images/icon-32.png"
+    }
+  },
+
+  "options_ui": {
+    "page": "html/options.html",
+    "chrome_style": true,
+    "open_in_tab": false
   },
 
   "permissions": [
