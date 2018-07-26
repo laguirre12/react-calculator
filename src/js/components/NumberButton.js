@@ -1,9 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-/**
- * A button solely for number values.
- */
 class NumberButton extends React.Component {
   constructor(props) {
     super(props);
@@ -11,8 +8,8 @@ class NumberButton extends React.Component {
 
   render() {
     return (
-      <div className='numberBtn-div' onclick={this.props.clickHandler}>
-        <p className='numberBtn-p'>{this.props.val}</p>
+      <div className='numberBtn-div' onclick={() => this.props.clickHandler(this.props.val)}>
+        <p className='numberBtn-val'>{this.props.val}</p>
       </div>
     );
   }

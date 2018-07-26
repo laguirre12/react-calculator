@@ -1,9 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-/**
- * A component for displaying
- */
 class OutputComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +16,7 @@ class OutputComponent extends React.Component {
 }
 
 OutputComponent.propTypes = {
-  val: PropTypes.number.isRequired
+  val: PropTypes.string.isRequired
 };
 
 module.exports = OutputComponent;
