@@ -1,22 +1,18 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-class OutputComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className='output-div'>
-        <p className='output-p'>{this.props.val}</p>
-      </div>
-    );
-  }
+function OutputComponent(props) {
+  return (
+    <div className='output-div'>
+      <div className='output-val'>{props.val}</div>
+      <div className='output-equation'>{props.equation}</div>
+    </div>
+  );
 }
 
 OutputComponent.propTypes = {
-  val: PropTypes.string.isRequired
+  val: PropTypes.string.isRequired,
+  equation: PropTypes.string
 };
 
 module.exports = OutputComponent;

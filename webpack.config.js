@@ -5,7 +5,13 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/app/'
+    publicPath: '/build/'
+  },
+
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    port: 8080,
+    hot: true,
   },
 
   module: {
@@ -27,7 +33,8 @@ const config = {
     ]
   },
 
-  mode: 'development'
+  //mode: 'development'
+  mode: 'production'
 };
 
 module.exports = config;

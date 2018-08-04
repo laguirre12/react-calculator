@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/**
+ * #babbbc
+ * other-grey: #1e2121
+ * dart-grey: #202121
+ * sea-serpent: #40BCD8
+ * maximum-blue: #39A9DB
+ * persian-red: #D63230
+ * bright navy-blue: #1C77C3
+ * deep safron: #F39237
+ */
+
+/*------------------------------------------------------------------*/
+/* General layout */
+/*------------------------------------------------------------------*/
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  margin: 0 auto;
+  padding: 0;
+
+  /* max height and width */
+  max-width: 800px;
+  max-height: 800px;
+
+  /* set starting dimensions*/
+  width: 250px;
+  height: 375px;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/* Output CSS */
+/*------------------------------------------------------------------*/
+.output-div {
+  /* grid-column: 1 / 5; white-space: nowrap; */
+  height: 125px;
+  text-align: right;
+
+  color: white;
+  background-color: #202121;
+}
+
+.output-div > .output-val {
+  height: 80px;
+  font-size: 40px;
+  line-height: 80px;
+  padding-top: 20px;
+}
+
+.output-div > .output-equation {
+  height: 25px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+
+/*------------------------------------------------------------------*/
+/* Keyboard CSS */
+/*------------------------------------------------------------------*/
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  background-color: #FFF;
+}
+
+.zero {
+  grid-column: 1 / 3;
+}
+
+.btn {
+  border: 0;
+  color: black;
+  font-size: 18px;
+  font-family: system-ui, sans-serif;
+  border: 1px solid #1e2121;
+}
+
+.other {
+  background-color: #babbbc;
+}
+
+.operator {
+  background-color: #F39237;
+}
