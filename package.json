@@ -8,10 +8,12 @@
     "lint": "eslint src/js",
     "clean": "rm -rdf node_modules/ coverage/ npm-debug.log build/bundle.js",
     "build": "webpack -d",
-    "server": "npm run build && webpack-dev-server --inline",
+    "start": "npm run build && webpack-dev-server --inline",
     "test": "jest ./test/*.test.js --coverage"
   },
   "dependencies": {
+    "is-number": "^7.0.0",
+    "mathjs": "^5.0.4",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"

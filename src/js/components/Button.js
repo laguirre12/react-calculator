@@ -1,6 +1,10 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
+/**
+ * A functional component for a general purpose button. A Button can be given
+ * className property to allow for styling.
+ */
 function Button(props) {
   const buttonClass = typeof props.className === 'string' ?
     props.className :

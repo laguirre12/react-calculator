@@ -1,21 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Roboto');
 
 /**
- * #babbbc
- * other-grey: #1e2121
- * dart-grey: #202121
- * sea-serpent: #40BCD8
- * maximum-blue: #39A9DB
- * persian-red: #D63230
- * bright navy-blue: #1C77C3
- * deep safron: #F39237
+ * font-family: 'Montserrat', sans-serif;
+ * font-family: 'Open Sans', sans-serif;
+ * font-family: 'Lato', sans-serif;
+ * font-family: 'Roboto', sans-serif;
+ */
+
+/** Color Schemes
+ * (output background, keyboard background, text-color, special 1, special 2
+ * 1. white, white, #b4b4ba, #605d6f, #ff5264
+ * 2. #293035, #273036, #8d9396, white, #1f9bcf
+ * 3. #f5f5f7, white, #7c8489, #2c383e, #1f9bcf
+ * 4. #455368, #f1f1f1, #8d9299, #a7aeb8/white, #f57e72
+ * 5. white, white, #939aac, #67655c, #cdd1d9, #5dace2
  */
 
 /*------------------------------------------------------------------*/
 /* General layout */
 /*------------------------------------------------------------------*/
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   text-align: center;
   margin: 0;
@@ -45,8 +50,8 @@ body {
   height: 125px;
   text-align: right;
 
-  color: white;
-  background-color: #202121;
+  color: #a7aeb8;
+  background-color: #455368;
 }
 
 .output-div > .output-val {
@@ -79,16 +84,21 @@ body {
 
 .btn {
   border: 0;
-  color: black;
-  font-size: 18px;
+  font-size: 24px;
   font-family: system-ui, sans-serif;
-  border: 1px solid #1e2121;
+  color: #8d9299;
+  background-color: #f1f1f1;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .other {
-  background-color: #babbbc;
+/*  background-color: #babbbc; */
 }
 
 .operator {
-  background-color: #F39237;
+  color: white;
+  background-color: #f57e72;
 }
