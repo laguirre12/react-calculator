@@ -3,13 +3,13 @@ const config = {
   entry: path.resolve(__dirname, 'src/') + '/js/index.js',
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/build/'
+    publicPath: '/dist/'
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.join(__dirname, 'dist'),
     port: 8080,
     hot: true,
   },

@@ -10,72 +10,121 @@ require('../../css/main.css');
 /**
  * A calculator component. The component maintains an expression to be
  * calculated
+ *
+ * A calculator maintains a current expression, value, and token.
+ * A token is a string that is either a number or an operator (+,-,*,/, etc.)
+ * An expression is a string equence of tokens.
+ * A value is a string number.
+ *
+ * Types of keys:
+ *  - clear
+ *  - operator
+ *  - +/-
+ *  - number (and .)
+ *  - equals
+ *
+ * render: (value if expression empty, else expression, expression)
+ *
+ * The calculator initially start with a value of 0, an empty token and an
+ * empty expresion.
+ * If a number is pressed:
+ *    - if the token is a number than append it
+ *    - else we have a new token
+ * If +/- is pressed:
+ *    - if token is a number, update it
+ *    - else nothing
+ * If a '.' is pressed
+ *    - if the token is a number that doesn't have a '.' append it
+ *    - if the token is a number that already has a '.' do nothing
+ *    - else do nothing
+ * If an operator is pressed
+ *    - if token is a number then we have a new token
+ *    - if token is an operator then replace it
+ *    - else nothing
+ * If equals is pressed
+ *    - perform computation
+ *    - set the token and expression to empty, and the resulting value
+ * If clear is pressed
+ *    - clear expression, token, and set value to 0
  */
 class CalculatorComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      computed: false,
-      lastToken: '',
-      expression: '',
-      val: '',
+      token: '',         // the last token that was entered
+      expression: '',    // the current expression
+      value: '0',        // the last computed value
     };
 
     // bind calculator methods to this
-    this.append = this.append.bind(this);
+    this.appendDecimal = this.appendDecimal.bind(this);
+    this.appendNumber = this.appendNumber.bind(this);
+    this.appendOperator = this.appendOperator.bind(this);
     this.changeSign = this.changeSign.bind(this);
     this.calculate = this.calculate.bind(this);
     this.clear = this.clear.bind(this);
     this.more = this.more.bind(this);
   }
 
-  append(token) {
-    let newToken, newExpression;
-    if (!isNumber(token) || !isNumber(this.state.lastToken)) {
-      newToken = token;
-      newExpression = this.state.expression + this.state.lastToken;
-    } else {
-      newToken = this.state.lastToken + token;
-      newExpression = this.state.expression;
+  appendNumber(num) {
+    let newToken = this.state.token + num;
+    let newExpression = this.state.expression;
+    if (!isNumber(this.state.token)) {
+      newToken = num;
+      newExpression = this.state.expression + this.state.token;
     }
-    console.log('appending...', 'lastToken:', newToken, 'expression:', newExpression);
     this.setState({
-      computed: false,
-      lastToken: newToken,
-      expression: newExpression,
+      token: newToken,
+      expression: newExpression
     });
   }
 
-  calculate() {
-    const newExpression = this.state.expression + this.state.lastToken;
-    const result = math.eval(newExpression).toString();
-    console.log('calulating:', newExpression, 'result:', result);
+  appendOperator(op) {
+    let newExpression = this.state.expression;
+    if (isNumber(this.state.token)) {
+      newExpression += this.state.token;
+    } else if (this.state.token === '') {
+      newExpression += this.state.value;
+    }
     this.setState({
-      lastToken: result,
-      computed: true,
+      token: op,
+      expression: newExpression
+    });
+  }
+
+  appendDecimal() {
+    if (isNumber(this.state.token) && !this.state.token.includes('.')) {
+      this.setState({ token: this.state.token + '.'  });
+    } else if (this.state.token === '' && !this.state.value.includes('.')) {
+      this.setState({ token: this.state.value + '.' });
+    }
+  }
+
+  calculate() {
+    const result = math.eval(this.state.expression + this.state.token).toString();
+    this.setState({
+      token: '',
       expression: '',
-      val: result,
+      value: result,
     });
   }
 
   clear() {
     this.setState({
-      val: '',
-      lastToken: '',
+      value: '0',
+      token: '',
       expression: '',
-      computed: false,
     });
   }
 
   changeSign() {
-    console.log('changing size');
-    if (isNumber(this.state.lastToken)) {
-      this.setState({
-        computed: false,
-        lastToken: -1 * parseFloat(this.state.lastToken)
-      });
+    if (isNumber(this.state.token)) {
+      this.setState({ token: (-1 * parseFloat(this.state.token)).toString() });
+    } else if (this.state.token === '') {
+      this.setState({ token: (-1 * parseFloat(this.state.value)).toString() });
     }
   }
+
 
 
   // TODO(la): implement a sliding menu that has more options
@@ -84,18 +133,23 @@ class CalculatorComponent extends React.Component {
 
 
   render() {
-    const val = this.state.computed ? this.state.val : this.state.lastToken;
-    const expression = this.state.computed ? this.state.expression : '';
-    console.log('rendering... ', 'computed:', this.state.computed, 'val:', val, 'expression:', expression);
+    let expression = this.state.expression + this.state.token;
+    let val = expression;
+    if (this.state.token === '' && this.state.expression === '') {
+      val = this.state.value;
+      expression = this.state.value;
+    }
     return (
       <div className='calculator-div'>
-        <OutputComponent val={val} expression={expression}/>
+        <OutputComponent major={val} minor={expression}/>
         <KeyboardComponent
           more={this.more}
           clear={this.clear}
           calculate={this.calculate}
           changeSign={this.changeSign}
-          append={this.append}/>
+          appendNumber={this.appendNumber}
+          appendDecimal={this.appendDecimal}
+          appendOperator={this.appendOperator}/>
       </div>
     );
   }

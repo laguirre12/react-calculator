@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/js",
-    "clean": "rm -rdf node_modules/ coverage/ npm-debug.log build/bundle.js",
+    "clean": "rm -rdf node_modules/ coverage/ npm-debug.log dist/bundle.js",
     "build": "webpack -d",
     "start": "npm run build && webpack-dev-server --inline",
     "test": "jest ./test/*.test.js --coverage"

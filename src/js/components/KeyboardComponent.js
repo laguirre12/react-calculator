@@ -8,41 +8,41 @@ const PropTypes = require('prop-types');
 function KeyboardComponent(props) {
   return (
     <div className='keyboard'>
-      <Button val='C' className='other' clickHandler={props.clear}/>
-      <Button val='+/-' className='other' clickHandler={props.changeSign}/>
-      <Button val='%' className='other' clickHandler={props.more}/>
-      <Button val='/' className='operator' clickHandler={props.append}/>
+      <Button label='%' className='other' clickHandler={props.more}/>
+      <Button label='C' className='other' clickHandler={props.clear}/>
+      <Button label='+/-' className='other' clickHandler={props.changeSign}/>
+      <Button label='/' className='operator' clickHandler={props.appendOperator}/>
 
-      <Button key='7' val='7' clickHandler={props.append}/>
-      <Button key='8' val='8' clickHandler={props.append}/>
-      <Button key='9' val='9' clickHandler={props.append}/>
-      <Button val='*' className='operator' clickHandler={props.append}/>
+      <Button key='7' label='7' clickHandler={props.appendNumber}/>
+      <Button key='8' label='8' clickHandler={props.appendNumber}/>
+      <Button key='9' label='9' clickHandler={props.appendNumber}/>
+      <Button label='*' className='operator' clickHandler={props.appendOperator}/>
 
-      <Button key='4' val='4' clickHandler={props.append}/>
-      <Button key='5' val='5' clickHandler={props.append}/>
-      <Button key='6' val='6' clickHandler={props.append}/>
-      <Button val='-' className='operator' clickHandler={props.append}/>
+      <Button key='4' label='4' clickHandler={props.appendNumber}/>
+      <Button key='5' label='5' clickHandler={props.appendNumber}/>
+      <Button key='6' label='6' clickHandler={props.appendNumber}/>
+      <Button label='-' className='operator' clickHandler={props.appendOperator}/>
 
-      <Button key='1' val='1' clickHandler={props.append}/>
-      <Button key='2' val='2' clickHandler={props.append}/>
-      <Button key='3' val='3' clickHandler={props.append}/>
-      <Button val='+' className='operator' clickHandler={props.append}/>
+      <Button key='1' label='1' clickHandler={props.appendNumber}/>
+      <Button key='2' label='2' clickHandler={props.appendNumber}/>
+      <Button key='3' label='3' clickHandler={props.appendNumber}/>
+      <Button label='+' className='operator' clickHandler={props.appendOperator}/>
 
-      <Button className='zero' key='0' val='0' clickHandler={props.append}/>
-      <Button val='.' clickHandler={props.append}/>
-      <Button val='=' className='operator' clickHandler={props.calculate}/>
+      <Button className='zero' key='0' label='0' clickHandler={props.appendNumber}/>
+      <Button label='.' clickHandler={props.appendDecimal}/>
+      <Button label='=' className='operator' clickHandler={props.calculate}/>
     </div>);
 }
-/**<Button val='&divide;' className='operator' clickHandler={props.append}/>
-   <Button val='&#10005;' className='operator' clickHandler={props.append}/>
- */
+
 
 KeyboardComponent.propTypes = {
   more: PropTypes.func,
   clear: PropTypes.func,
-  append: PropTypes.func,
   calculate: PropTypes.func,
   changeSign: PropTypes.func,
+  appendNumber: PropTypes.func,
+  appendDecimal: PropTypes.func,
+  appendOperator: PropTypes.func,
 };
 
 module.exports = KeyboardComponent;
