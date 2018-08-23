@@ -13,7 +13,7 @@ function Button(props) {
     props.className :
     props.className.join(' ');
   return (
-    <button className={`btn ${buttonClass}`} onClick={() => props.clickHandler(value); }>
+    <button className={`btn ${buttonClass}`} onClick={() => props.clickHandler(value) }>
       {props.label}
     </button>
   );
