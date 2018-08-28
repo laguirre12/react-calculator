@@ -1,0 +1,23 @@
+.output-div {
+  color: white;
+  background-color: #333333;
+}
+
+.output-expression {
+  color: #449C88;
+}
+
+.keyboard {
+  background-color: white;
+}
+
+.btn {
+  color: white;
+  background-color: #292929;
+  border: 1px solid #313131;
+}
+
+.operator {
+  color: white;
+  background-color: #252525;
+}

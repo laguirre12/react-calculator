@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/*------------------------------------------------------------------*/
+/* General layout */
+/*------------------------------------------------------------------*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  margin: 0 auto;
+  padding: 0;
+
+  /* max height and width */
+  max-width: 800px;
+  max-height: 800px;
+
+  /* set starting dimensions*/
+  width: 250px;
+  height: 375px;
+}
+
+/*------------------------------------------------------------------*/
+/* Output CSS */
+/*------------------------------------------------------------------*/
+.output-div {
+  height: 125px;
+  text-align: right;
+}
+
+.output-div > .output-val {
+  height: 80px;
+  font-size: 40px;
+  line-height: 80px;
+  padding-top: 20px;
+}
+
+.output-div > .output-equation {
+  height: 25px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/*------------------------------------------------------------------*/
+/* Keyboard CSS */
+/*------------------------------------------------------------------*/
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+}
+
+.zero {
+  grid-column: 1 / 3;
+}
+
+.btn {
+  border: 0;
+  font-size: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+.btn:focus {
+  outline: none;
+}

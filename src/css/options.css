@@ -1,0 +1,13 @@
+#input-div, #color-preview {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.color-square {
+  margin: 0;
+  padding: 0;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  border: 1px solid black;
+}

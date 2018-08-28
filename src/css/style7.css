@@ -1,0 +1,32 @@
+.ouptut-div {
+  color: #9596A1;
+  background-color: white;
+}
+
+.output-val, .output-expression {
+  color: #9596A1;
+  background-color: white;
+}
+
+.keyboard {
+  color: white;
+  background-color: #4B4C60;
+}
+
+.btn {
+  color: white;
+  background-color: #4B4C60;
+}
+
+.operator, .other {
+  background-color: #5E5F70;
+}
+
+.operator {
+  border: 1px solid #535467;
+}
+
+.equal {
+  border: none;
+  background-color: #FF3C6B;
+}

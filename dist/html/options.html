@@ -1,20 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="laguirre">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>React Calculator</title>
-  <meta name="author" content="laguirre">
+    <title>React Calculator</title>
+  </head>
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
+  <body>
+    <div id="input-div">
+      <h2>Calculator Style</h2>
+      <form id="form-style">
+        <div>
+          <input type="radio" value="style1.css" name="style"/>
+          <label>style 1</label>
+        </div>
+        <div>
+          <input type="radio" value="style2.css" name="style"/>
+          <label>style 2</label>
+        </div>
+        <div>
+          <input type="radio" value="style3.css" name="style"/>
+          <label>style 3</label>
+        </div>
+        <div>
+          <input type="radio" value="style4.css" name="style"/>
+          <label>style 4</label>
+        </div>
+        <div>
+          <input type="radio" value="style5.css" name="style"/>
+          <label>style 5</label>
+        </div>
+        <div>
+          <input type="radio" value="style6.css" name="style"/>
+          <label>style 6</label>
+        </div>
+        <div>
+          <input type="radio" value="style7.css" name="style"/>
+          <label>style 7</label>
+        </div>
 
-<body>
-  <h1>Hello World!</h1>
-  <div id="content">
-  </div>
-</body>
+        <br/>
+        <button type="button" id="reset">Reset to Default</button>
+        <button type="button" id="save">Save Settings</button>
+      </form>
+    </div>
+
+    <div id="color-preview">
+      <h2>Color Palette</h2>
+      <div class="color-square"></div>
+      <div class="color-square"></div>
+      <div class="color-square"></div>
+      <div class="color-square"></div>
+      <div class="color-square"></div>
+      <div class="color-square"></div>
+    </div>
+    <script src="../options.js"></script>
+  </body>
 </html>

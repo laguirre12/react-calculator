@@ -1,11 +1,17 @@
 const path = require('path');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 const config = {
-  entry: path.resolve(__dirname, 'src/') + '/js/index.js',
+  entry: {
+    popup: path.resolve(__dirname, 'src/') + '/js/popup/index.js',
+    options: path.resolve(__dirname, 'src/') + '/js/options.js',
+  },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/dist/'
+    filename: '[name].js',
+    publicPath: 'dist/'
   },
 
   devServer: {
@@ -33,8 +39,30 @@ const config = {
     ]
   },
 
-  //mode: 'development'
-  mode: 'production'
+  /*
+  optimization: {
+    minimize: true,
+    minimizer: [new UglifyJsPlugin({
+      cache: true,
+      uglifyOptions: {
+        toplevel: true,
+      }
+    })],
+    occurrenceOrder: false
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      },
+    }),
+  ],
+
+  mode: 'production',
+  devtool: false
+  */
+  mode: 'development'
 };
 
 module.exports = config;
