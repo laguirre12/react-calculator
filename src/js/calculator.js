@@ -1,12 +1,12 @@
 /**
  * A module for creating a simple calculator object that maintains a current
- * expression to be computed, and then uses mathjs to evaluate it. The
+ * expression to be computed, and then uses a math evaluator to evalute it. The
  * calculator can take a set of operations to limit possible operations.
  * @module calculator
  * @author laguirre <aguirreluis1234@gmail.com>
  */
-const math = require('mathjs');
 const isNumber = require('is-number');
+const math = require('math-expression-evaluator');
 
 /**
  * Represents a calculator object that maintains an expression, a current token,

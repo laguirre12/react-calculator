@@ -47,7 +47,7 @@ const config = {
         toplevel: true,
       }
     })],
-    occurrenceOrder: false
+    occurrenceOrder: false,
   },
 
   plugins: [
