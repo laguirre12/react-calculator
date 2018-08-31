@@ -1,18 +1,24 @@
 /**
- * A module containing a Keyboard component consisting of buttons.
- * @module KeyboardComponent
+ * A component for displaying a calculators keyboard consisting of buttons.
+ * @module Keyboard
  * @author laguirre <aguirreluis1234@gmail.com>
  */
 const React = require('react');
-const Button = require('./Button');
 const PropTypes = require('prop-types');
+const Button = require('../common/Button');
 
 /**
- * A functional component containing the buttons for a calculator's keyboard.
- * @param {object} props the properties of the Keyboard
- * @returns {jsx} returns a jsx string for rendering the keyboard
+ * A functional component containing the buttons for a calculators keyboard.
+ * The calculators keyboard requires functions to perform when each kind of key
+ * is pressed.
+ *
+ * Props:
+ *  clear - clickHandler for the 'C' button
+ *  calculate - clickHandler for the '=' button
+ *  changeSign - clickHandler for the '+/-' button
+ *  append - clickHandler for number, token and decimal buttons
  */
-function KeyboardComponent(props) {
+function Keyboard(props) {
   return (
     <div className='keyboard'>
       <Button label='C' className='other' clickHandler={props.clear}/>
@@ -41,22 +47,11 @@ function KeyboardComponent(props) {
     </div>);
 }
 
-
-/**
- * @property {function} clear the function to perform when the 'C' key is
- * pressed
- * @property {function} append the function to perform when a calculator key
- * is pressed
- * @property {function} calculate the function to perform when the '=' key is
- * pressed
- * @property {function} changeSign the function to perform when the '+/-' key
- * is pressed
- */
-KeyboardComponent.propTypes = {
-  clear: PropTypes.func,
-  append: PropTypes.func,
-  calculate: PropTypes.func,
-  changeSign: PropTypes.func,
+Keyboard.propTypes = {
+  clear: PropTypes.func.isRequired,
+  append: PropTypes.func.isRequired,
+  calculate: PropTypes.func.isRequired,
+  changeSign: PropTypes.func.isRequired,
 };
 
-module.exports = KeyboardComponent;
+module.exports = Keyboard;

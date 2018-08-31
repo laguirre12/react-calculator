@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "React Calculator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "laguirre",
 
   "description": "A calculator chrome extension built with ReactJS",

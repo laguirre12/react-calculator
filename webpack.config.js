@@ -4,7 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
   entry: {
-    popup: path.resolve(__dirname, 'src/') + '/js/popup/index.js',
+    popup: path.resolve(__dirname, 'src/') + '/js/popup.js',
     options: path.resolve(__dirname, 'src/') + '/js/options.js',
   },
 
@@ -39,7 +39,6 @@ const config = {
     ]
   },
 
-  /*
   optimization: {
     minimize: true,
     minimizer: [new UglifyJsPlugin({
@@ -59,10 +58,8 @@ const config = {
     }),
   ],
 
-  mode: 'production',
+  mode: 'production', // development,
   devtool: false
-  */
-  mode: 'development'
 };
 
 module.exports = config;

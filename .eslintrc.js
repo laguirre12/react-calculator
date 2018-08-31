@@ -48,16 +48,12 @@ module.exports = {
       "error",
       "always"
     ],
-    "valid-jsdoc": [            // enforce valid jsdoc. comments dont require
-      "warn",                   // return statement for all functions
-      {
-        "requireReturn": false,
-        "requireReturnType": true,
-      }
-    ],
     "no-magic-numbers": [       // no special numbers, except for array indx.
       "warn",
-      { "ignoreArrayIndexes": true }
+      {
+        "ignore": [-1,0,1],
+        "ignoreArrayIndexes": true
+      }
     ],
     "yoda": [                   // var. must appear before literal in comps.
       "error",                  // except for when used in range comparisons

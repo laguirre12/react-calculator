@@ -1,0 +1,26 @@
+.alert {
+  width: auto;
+  color: white;
+  max-width: 600px;
+  border-radius: 5px;
+  text-align: center;
+
+  /* styling specific to this layout */
+  margin-top: 65px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.alert-success {
+  background-color: #3874B1;
+}
+
+.alert-failure {
+  background-color: #d9534f;
+}
+
+.alert-neutral {
+  background-color: #59E570;
+}

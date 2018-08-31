@@ -1,14 +1,38 @@
 # React-Calculator
+A chrome extension that provides a simple calculator with customizable themes in a popup window in your Chrome Browser.
+
+## Description
+Add an easy to use calculator to your chrome browsing experience with this extension, and adjust the color scheme to your liking!
+
+## Examples
+1. (example image of calculator)
+2. (example image of adjusting settings
+
+## Technolgies Used
+- React
+- Jest
+- Webpack and Babel
+- Chrome Storage API
+- Javascript
+- HTML & CSS
+
+## Install and Settings
+
+### Unpacked Extension
+* Download or fork this repository (Only the 'dist' directory is necessary).
+* The 'dist' directory contains the fully built chrome extension.
+* Open (chrome://extensions/) or select the menu 'More Tools > Extensions.'
+* Enable developer mode at top right.
+* Click 'Load Unpacked' and select the 'dist' folder.
+
+### Settings
+To adjust the settings of the extension and change the styling of the calculator:
+* Make sure that the Extension is installed
+* Open (chrome://extensions/) or select the menu 'More Tools > Extensions.'
+* Find the 'React Calculator' extension and click the 'Details' options
+* Find and click 'Extension options'
+* Choose an appropriate theme and click 'Save Settings' to customize the calculators design!
 
 ## TODO's:
-1. create a calculator object that stores the state of the calculator app
-2. CSS styling and layout
-3. CSS for buttons
-4. jsdoc?
-5. add mulitple colorings/styles for the calculator (in options)
-6. rather than creating long chains of expressions, instead only allow
-   for short 2-value computations. This should eliminate (1)
-8. create an Operations type? Or, some standardized way of defining what
-   operations do and how they'll affect the state
-9. Keyboard shortcuts??
-11. Output components multiple lines to show equation
+2. demo images/finished README
+3. add some history method to calculator.js

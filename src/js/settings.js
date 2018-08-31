@@ -6,24 +6,35 @@
  * @author laguirre <aguirreluis1234@gmail.com>
  */
 
-
 /*
  * Constants defining default styling and what colors are used in each style
  * option.
  * @constant
  * @readonly
  */
-const DEFAULT_STYLE = 'style1.css';
+const DEFAULT_STYLE = 'style 1';
 const DEFAULT_SETTINGS = {style: DEFAULT_STYLE};
-const VALID_STYLES = Object.freeze({
-  'style1.css': ['#455368', '#a7aeb8', '#f1f1f1', '#8d9299', '#f57e72', 'white'],
-  'style2.css': ['white', '#80808c', 'white', '#b4b4ba', '#ff5264', '#605d6f'],
-  'style3.css': ['#293035', 'white', '#273036', '#8d9396', '#1f9bcf', 'white'],
-  'style4.css': ['#f5f5f7', '#2c383e', 'white', '#7c8489', '#1f9bcf', 'white'],
-  'style5.css': ['#333333', 'white', '#292929', 'white', '#252525', '#449c88'],
-  'style6.css': ['#333333', 'white', '#f2f2f2', '#797979', '#8fd1c7', '#42bfb9'],
-  'style7.css': ['white', '#9596a1', '#4b4c60', 'white', '#5e5f70', '#ff3c6b'],
-});
+const STYLES = ['style 1', 'style 2', 'style 3','style 4', 'style 5', 'style 6', 'style 7'];
+
+// TODO(la): keep these values internally and instead create getter functions for these values?
+const STYLE_FILES = new Map([
+  ['style 1', 'style1.css'],
+  ['style 2', 'style2.css'],
+  ['style 3', 'style3.css'],
+  ['style 4', 'style4.css'],
+  ['style 5', 'style5.css'],
+  ['style 6', 'style6.css'],
+  ['style 7', 'style7.css']
+]);
+const COLOR_SCHEMES = new Map([
+  ['style 1', ['#455368','#a7aeb8','#f1f1f1','#8d9299','#f57e72','white']],
+  ['style 2', ['white','#80808c','white','#b4b4ba','#ff5264','#605d6f']],
+  ['style 3', ['#293035','white','#273036','#8d9396','#1f9bcf','white']],
+  ['style 4', ['#f5f5f7','#2c383e','white','#7c8489','#1f9bcf','white']],
+  ['style 5', ['#333333','white','#292929','white','#252525','#449c88']],
+  ['style 6', ['#333333','white','#f2f2f2','#797979','#8fd1c7','#42bfb9']],
+  ['style 7', ['white','#9596a1','#4b4c60','white','#5e5f70','#ff3c6b']]
+]);
 
 
 
@@ -41,7 +52,7 @@ function retrieveSettings(callback) {
         DEFAULT_SETTINGS);
     }
 
-    if (!VALID_STYLES.hasOwnProperty(data.style)) data = DEFAULT_SETTINGS;
+    if (!STYLES.includes(data.style)) data = DEFAULT_SETTINGS;
     callback(undefined, data);
   });
 }
@@ -68,5 +79,7 @@ module.exports = {
   retrieveSettings: retrieveSettings,
   DEFAULT_SETTINGS: DEFAULT_SETTINGS,
   DEFAULT_STYLE: DEFAULT_STYLE,
-  VALID_STYLES: VALID_STYLES,
+  COLOR_SCHEMES: COLOR_SCHEMES,
+  STYLE_FILES: STYLE_FILES,
+  STYLES: STYLES,
 };

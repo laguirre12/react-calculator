@@ -35,7 +35,7 @@ class Calculator {
    * Returns the last appended token of the calculator. The token will either
    * be a number or an operator. If the expression is currently empty, then the
    * last computed value is treated as a token.
-   * @returns {string} the current token
+   * @return {string} the current token
    */
   getToken() {
     if (this.token === '') return this.value;
@@ -44,7 +44,7 @@ class Calculator {
 
   /**
    * Returns the current string expression that the calculator is maintaining.
-   * @returns {string} the current expression in the calculator
+   * @return {string} the current expression in the calculator
    */
   getExpression() {
     return this.expression + this.getToken();
@@ -52,7 +52,7 @@ class Calculator {
 
   /**
    * Returns the last computed value of the calculator.
-   * @returns {string} the last computed value of the calculator.
+   * @return {string} the last computed value of the calculator.
    */
   getValue() {
     return this.value;
@@ -61,7 +61,7 @@ class Calculator {
   /**
    * Evaluates the calculators current expression, and then updates the state of
    * the calculator.
-   * @returns {string} the computed value.
+   * @return {string} the computed value.
    */
   calculate() {
     this.history.push(this.getExpression());

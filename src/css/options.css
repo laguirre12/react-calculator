@@ -1,4 +1,4 @@
-#input-div, #color-preview {
+.input-section, .view-section {
   display: inline-block;
   vertical-align: top;
 }
