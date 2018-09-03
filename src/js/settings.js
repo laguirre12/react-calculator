@@ -5,6 +5,7 @@
  * @module settings
  * @author laguirre <aguirreluis1234@gmail.com>
  */
+const chrome = require('./chrome');
 
 /*
  * Constants defining default styling and what colors are used in each style
@@ -16,7 +17,8 @@ const DEFAULT_STYLE = 'style 1';
 const DEFAULT_SETTINGS = {style: DEFAULT_STYLE};
 const STYLES = ['style 1', 'style 2', 'style 3','style 4', 'style 5', 'style 6', 'style 7'];
 
-// TODO(la): keep these values internally and instead create getter functions for these values?
+// TODO(la): keep these values internally and instead create getter functions
+// for these values?
 const STYLE_FILES = new Map([
   ['style 1', 'style1.css'],
   ['style 2', 'style2.css'],
@@ -53,7 +55,7 @@ function retrieveSettings(callback) {
     }
 
     if (!STYLES.includes(data.style)) data = DEFAULT_SETTINGS;
-    callback(undefined, data);
+    callback(null, data);
   });
 }
 

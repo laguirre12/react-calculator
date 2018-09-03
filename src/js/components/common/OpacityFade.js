@@ -76,7 +76,7 @@ OpacityFade.propTypes = {
   children: PropTypes.node,
   onFadeIn: PropTypes.func,
   onFadeOut: PropTypes.func,
-  fadeRate: PropTypes.number,
+  fadeRate: PropTypes.number,  // TODO(la): add bounds, 0 < fadeRate < 1
 };
 
 OpacityFade.defaultProps = {

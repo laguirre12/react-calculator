@@ -5,7 +5,7 @@
   "author": "laguirre",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/js",
+    "lint": "eslint src/js test/",
     "clean": "rm -rdf node_modules/ coverage/ npm-debug.log dist/*.js",
     "build": "webpack --config webpack.config.js",
     "start": "npm run build && webpack-dev-server --inline",
@@ -27,7 +27,9 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "react-test-renderer": "^16.4.2",
     "style-loader": "^0.21.0",
@@ -46,7 +48,10 @@
       "node_modules",
       "bower_components",
       "shared"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   },
   "keywords": [
     "calculator",

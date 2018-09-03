@@ -3,11 +3,13 @@ module.exports = {
     "browser": true,
     "es6": true,
     "node": true,
+    "jest/globals": true
   },
 
   // common rules recommended by eslint are enforced
   "extends": [
     "eslint:recommended",
+    "plugin:jest/recommended",
     "plugin:react/recommended"
   ],
 
@@ -20,7 +22,8 @@ module.exports = {
   },
 
   "plugins": [
-    "react"
+    "react",
+    "jest"
   ],
 
   "rules": {
@@ -70,11 +73,18 @@ module.exports = {
         "ignoreTemplateLiterals": true
       }
     ],
-    "space-before-function-paren": [ "error", {
+    "space-before-function-paren": [
+      "error",
+      {
         "named": "never",
         "anonymous": "always",
         "asyncArrow": "always"
       }
-    ]
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 };

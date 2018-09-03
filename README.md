@@ -10,11 +10,10 @@ Add an easy to use calculator to your chrome browsing experience with this exten
 
 ## Technolgies Used
 - React
-- Jest
-- Webpack and Babel
+- Webpack, Babel, ESLint
 - Chrome Storage API
 - Javascript
-- HTML & CSS
+- HTML5, CSS-Grid
 
 ## Install and Settings
 

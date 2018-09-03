@@ -30,4 +30,5 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('content'));
+const div = document.getElementById('content') || document.createElement('div');
+ReactDOM.render(<App/>, div);

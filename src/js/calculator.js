@@ -10,25 +10,33 @@ const math = require('math-expression-evaluator');
 
 /**
  * Represents a calculator object that maintains an expression, a current token,
- * a previously computed value, valid operators, and a history of previously
- * computed expressions. The calculator starts with a default value for 0.
+ * a previously computed value, and valid operators. The calculator starts with
+ * a default value for 0.
  * @example
- * const calc = new Calculator(['+','-','*','/']);  // a simple 4 function calculator
+ * const calc = new Calculator();
  * calc.append('1');
  * calc.append('2');
  * calc.append('+');
  * calc.append('5');
- * calc.getExpression();  //  returns '12 + 5'
+ * calc.getOperators();   // returns ['+', '-', '*', '/', '^']
+ * calc.getExpression();  // returns '12 + 5'
  * calc.calculate()       // returns 17
  */
 class Calculator {
-  constructor(operators) {
-    this.operators_ = operators;  // set of operators used in calculator
+  constructor() {
+    this.operators_ = ['+', '-', '*', '/', '^'];
 
     this.token = '';       // current token
     this.value = '0';      // last computed value
     this.expression = '';  // current expression
-    this.history = [];     // previously computed expressions
+  }
+
+  /**
+   * Returns the array of allowed operators.
+   * @return {array(string)} the allowed operators of the calculator.
+   */
+  getOperators() {
+    return this.operators_.map(x => x);
   }
 
   /**
@@ -64,10 +72,15 @@ class Calculator {
    * @return {string} the computed value.
    */
   calculate() {
-    this.history.push(this.getExpression());
-    this.value = math.eval(this.getExpression()).toString();
-    this.expression = '';
-    this.token = '';
+    try {
+      this.value = math.eval(this.getExpression()).toString();
+      this.expression = '';
+      this.token = '';
+    } catch (e) {
+      this.value = 'Err';
+      this.expression ='';
+      this.token = '';
+    }
     return this.value;
   }
 
@@ -97,16 +110,16 @@ class Calculator {
    * @param {string} token the token to append
    */
   append(token) {
-    if (isNumber(token)) this.appendNumber_(token);
+    if (isNumber(token) && token.length  == 1) this.appendDigit_(token);
     else if (this.operators_.includes(token)) this.appendOperator_(token);
     else if (token === '.') this.appendDecimal_(token);
-    else throw Error('unknown token type: ' + token);
+    else if (isNumber(token)) throw Error('Numbers should be appended as individual digits');
+    else throw Error('Unknown token type: ' + token);
   }
 
 
   /** @private */
-  // TODO(la): appending numbers that already have decimal points
-  appendNumber_(num) {
+  appendDigit_(num) {
     console.assert(isNumber(num));
     let newToken = this.token + num;
     let newExpression = this.expression;
