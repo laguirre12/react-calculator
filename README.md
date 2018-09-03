@@ -5,15 +5,19 @@ A chrome extension that provides a simple calculator with customizable themes in
 Add an easy to use calculator to your chrome browsing experience with this extension, and adjust the color scheme to your liking!
 
 ## Examples
-1. (example image of calculator)
-2. (example image of adjusting settings
+Perform simple calculation with the calculator extension!
+
+![Perform simple calculations with the calculator](./screenshots/calculator.png?raw=true "Calculator extension being used")
+
+Adjust the color palette on the options page to your liking!
+![Adjust the color palette on the options page](./screenshots/options.png? "Options page")
 
 ## Technolgies Used
 - React
 - Webpack, Babel, ESLint
 - Chrome Storage API
 - Javascript
-- HTML5, CSS-Grid
+- HTML, CSS
 
 ## Install and Settings
 
@@ -31,7 +35,3 @@ To adjust the settings of the extension and change the styling of the calculator
 * Find the 'React Calculator' extension and click the 'Details' options
 * Find and click 'Extension options'
 * Choose an appropriate theme and click 'Save Settings' to customize the calculators design!
-
-## TODO's:
-2. demo images/finished README
-3. add some history method to calculator.js
